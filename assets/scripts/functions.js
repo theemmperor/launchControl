@@ -1,5 +1,8 @@
 showTime()
     var gasLevel = 0;
+    var brakeLevel = 1;
+    var tracCtrl = 1;
+    var batCharge = 0;
 
     function getGas() {
         if (gasLevel == 0) {
@@ -14,24 +17,24 @@ showTime()
     }
     
     function setBrake() {
-        if (brakeLevel == 0) {
-            brakeLevel = 1;
+        if (brakeLevel == 1) {
+            brakeLevel = 0;
             document.getElementById('bttn_park').src = "./assets/images/bttn_park_0.PNG";
             document.getElementById('brake').src = "./assets/images/p0.PNG";
         } else {
-            brakeLevel = 0;
+            brakeLevel = 1;
             document.getElementById('bttn_park').src = "./assets/images/bttn_park_1.PNG";
             document.getElementById('brake').src = "./assets/images/p1.PNG";
         }
     }
 
     function setTrac() {
-        if (tracCtrl == 0) {
-            tracCtrl = 1;
+        if (tracCtrl == 1) {
+            tracCtrl = 0;
             document.getElementById('bttn_trac').src = "./assets/images/bttn_trac_0.PNG";
             document.getElementById('trac').src = "./assets/images/trac1.PNG";
         } else {
-            tracCtrl = 0;
+            tracCtrl = 1;
             document.getElementById('bttn_trac').src = "./assets/images/bttn_trac_1.PNG";
             document.getElementById('trac').src = "./assets/images/trac0.PNG";
         }
