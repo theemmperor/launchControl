@@ -3,6 +3,7 @@ showTime()
     var brakeLevel = 1;
     var tracCtrl = 1;
     var batCharge = 0;
+    var intMode = 0;
 
     function getGas() {
         if (gasLevel == 0) {
@@ -50,4 +51,31 @@ showTime()
             document.getElementById('bttn_batt').src = "./assets/images/bttn_batt_0.PNG";
             document.getElementById('batt').src = "./assets/images/batt0.PNG";
         }
+    }
+
+    function setMode() {
+        var gearStatus = document.getElementById('mode');
+        var gearImg = document.getElementById('bttn_shifter');
+        switch (intMode) {
+            case 0: 
+                intMode = 1;
+                gearImg.style.top = "725px";
+                gearStatus.innerText = 'ECO PRO';
+                break;
+            case 1: 
+                intMode = 2;
+                gearImg.style.top = "750px";
+                gearStatus.innerText = 'COMFORT';
+                break;
+            case 2: 
+                intMode = 3;
+                gearImg.style.top = "775px";
+                gearStatus.innerText = 'SPORT';
+                break;
+            default: 
+                intMode = 0;
+                gearImg.style.top = "700px";
+                gearStatus.innerText = 'PARK';
+                break;
+        }    
     }
